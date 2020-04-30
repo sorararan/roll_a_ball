@@ -1,19 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraController : MonoBehaviour
-{
-    public GameObject player; // 玉のオブジェクト
+public class CameraController : MonoBehaviour {
+    public GameObject player;
 
-    private Vector3 offset; // 玉からカメラまでの距離
+    private Vector3 offset;
 
-    void Start()
-    {
+    void Start() {
         offset = transform.position - player.transform.position;
     }
 
-    void LateUpdate()
-    {
+    void LateUpdate() {
         transform.position = player.transform.position + offset;
     }
 }
